@@ -1,34 +1,21 @@
 pub fn verse(n: u32) -> String {
-    let t1: String;
-    let t2: String;
-    let t3: String;
-
     format!(
         "{} of beer on the wall, {} of beer.\n{} of beer on the wall.\n",
         match n {
-            0 => "No more bottles",
-            1 => "1 bottle",
-            _ => {
-                t1 = format!("{} bottles", n);
-                &t1
-            }
+            0 => "No more bottles".into(),
+            1 => "1 bottle".into(),
+            _ => format!("{} bottles", n),
         },
         match n {
-            0 => "no more bottles",
-            1 => "1 bottle",
-            _ => {
-                t2 = format!("{} bottles", n);
-                &t2
-            }
+            0 => "no more bottles".into(),
+            1 => "1 bottle".into(),
+            _ => format!("{} bottles", n),
         },
         match n {
-            0 => "Go to the store and buy some more, 99 bottles",
-            1 => "Take it down and pass it around, no more bottles",
-            2 => "Take one down and pass it around, 1 bottle",
-            _ => {
-                t3 = format!("Take one down and pass it around, {} bottles", (n - 1).to_string());
-                &t3
-            }
+            0 => "Go to the store and buy some more, 99 bottles".into(),
+            1 => "Take it down and pass it around, no more bottles".into(),
+            2 => "Take one down and pass it around, 1 bottle".into(),
+            _ => format!("Take one down and pass it around, {} bottles", n - 1),
         },
     )
 }
